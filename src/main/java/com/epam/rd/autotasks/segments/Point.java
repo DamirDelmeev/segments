@@ -1,5 +1,7 @@
 package com.epam.rd.autotasks.segments;
 
+import java.util.Objects;
+
 class Point {
     private double x;
     private double y;
@@ -16,4 +18,13 @@ class Point {
     public double getY() {
         return y;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return Double.compare(point.x, x) == 0 && Double.compare(point.y, y) == 0;
+    }
+
 }
